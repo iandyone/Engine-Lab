@@ -104,6 +104,7 @@
         justify-content: center;
         align-items: center;
         margin-bottom: getVW(25);
+        @extend %button;
     }
 
     &__rules {
@@ -310,9 +311,20 @@
     }
 
     &__media-link {
+        border-radius: 50%;
         margin-right: getVW(6);
         width: getVW(35);
         height: calc(35 / $VWDesctop * 100vw);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: getVW(35);
+        height: calc(35 / $VWDesctop * 100vw);
+        // animation: blind 2s ease-in-out infinite;
+
+        & > img {
+            width: 100%;
+        }
     }
 
     &__contacts {
@@ -437,12 +449,77 @@
 
 .main {
     display: flex;
-    &__scroll {
-        width: 85px;
+
+    .scroll {
+        width: getVW(100);
+        height: calc(915 / $VWDesctop * 100vw);
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 5px;
+            background: url("../assets/circle.svg") center no-repeat;
+            transform: translate(getVW(50), getVW(670));
+            animation: scroll 2s ease-in-out 0s infinite;
+        }
+
+        &__text {
+            font-weight: 700;
+            font-size: getVW(16);
+            line-height: getVW(25);
+            color: $scrollWhite;
+            transform: rotate(-90deg) translateX(getVW(-35));
+            position: relative;
+
+            // &::before {
+            //     content: "";
+            //     position: absolute;
+            //     height: calc(1 / $VWDesctop * 100vw);
+            //     width: getVW(490);
+            //     background-color: $scrollWhite;
+            //     transform: translate(-110%, getVW(15));
+            // }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: getVW(20);
+                height: calc(32 / $VWDesctop * 100vw);
+                background: url("../assets/mouse.svg") center no-repeat;
+                transform: rotate(90deg) translate(0, getVW(680));
+            }
+        }
+
+        &__bar {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: calc(1 / $VWDesctop * 100vw);
+                width: getVW(490);
+                background-color: $scrollWhite;
+                // transform: translate(-110%, getVW(15));
+                transform: rotate(-90deg) translate(getVW(-350), getVW(-195));
+            }
+        }
     }
 
     &__content {
         width: getVW(1780);
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translate(getVW(50), getVW(670));
+    }
+    to {
+        transform: translate(getVW(50), getVW(683));
     }
 }
 
@@ -502,6 +579,19 @@
         justify-content: space-between;
         padding: getVW(25) getVW(54);
         margin-right: getVW(22);
+        transition: all 0.2s ease;
+        @extend %button;
+
+        &:hover img {
+            transform: rotate(45deg);
+            transition: all 0.2s ease;
+        }
+
+        & > img {
+            width: getVW(22);
+            transition: all 0.2s ease;
+            height: calc(22 / $VWDesctop * 100vw);
+        }
 
         & > p {
             text-align: center;
@@ -509,7 +599,7 @@
             font-weight: 600;
             letter-spacing: 0.16em;
             color: $white;
-            padding-left: 13px;
+            padding-left: getVW(13);
         }
     }
 
@@ -519,6 +609,7 @@
         border-radius: 500px;
         padding: getVW(35) getVW(31);
         justify-content: space-between;
+        @extend %button;
 
         & > p {
             @include text(16, 25, 295);
@@ -591,3 +682,14 @@
         }
     }
 }
+
+// @keyframes blind {
+//     0% {
+//         -webkit-box-shadow: red 0 0 0;
+//         box-shadow: red 0 0 0;
+//     }
+//     70% {
+//         -webkit-box-shadow: #fe753f00 0 0 0 10px;
+//         box-shadow: #fe753f00 0 0 0 10px;
+//     }
+// }

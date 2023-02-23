@@ -27,3 +27,44 @@
         }
     }
 }
+
+%button {
+    position: relative;
+    overflow: hidden;
+    transition: all .2s ease;
+
+    &:hover {
+        cursor: pointer;
+        opacity: .8;
+        transition: all .2s ease;
+    }
+    
+    &:active {
+        transform: scale(.95);
+        transition: all .2s ease;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: url('../assets/blick.svg') center no-repeat;
+        transform: translateX(-10%);
+        animation: blick 5s ease-in-out 0s infinite ;
+
+    }
+}
+
+
+@keyframes blick {
+    from {
+        transform: translateX(-100%);
+    }
+    
+    to {
+        transform: translateX(100%);
+    }
+}
