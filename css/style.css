@@ -684,7 +684,52 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.8em;
 }
 
+.services {
+  margin-top: -8.471849866vw;
+}
 .services__content {
-  width: 95.4423592493vw;
+  width: 79.3565683646vw;
   margin: 0 auto;
+}
+.services__list {
+  display: flex;
+}
+.services__service {
+  flex: 1 1 auto;
+  padding: 0 5.0938337802vw;
+  padding-bottom: 1.6085790885vw;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  justify-content: center;
+}
+.services__service img {
+  height: 0.8042895442vw;
+  width: 0.8579088472vw;
+  margin-bottom: 1.072386059vw;
+}
+.services__service p {
+  font-weight: 300;
+  font-size: 0.9115281501vw;
+  line-height: 1.4477211796vw;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+.services__service p span {
+  font-weight: 800;
+}
+.services__service:nth-child(1) {
+  padding-left: 0;
+}
+.services__service:nth-child(1) p {
+  width: 11.2600536193vw;
+}
+.services__service:nth-child(2) > p {
+  width: 12.0643431635vw;
+}
+.services__service:nth-child(3) > p {
+  width: 7.7747989276vw;
+}
+.services__service:nth-child(4) > p {
+  width: 24.1286863271vw;
 }

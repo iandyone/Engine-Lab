@@ -530,23 +530,64 @@
         & > img {
             width: getVW(30);
             height: calc(30 / $VWDesctop * 100vw);
-            letter-spacing: .8em;
+            letter-spacing: 0.8em;
         }
     }
 }
 
 // === SERVICES == //
 .services {
+    margin-top: getVW(-158);
     &__content {
-        width: getVW(1780);
+        width: getVW(1480);
         margin: 0 auto;
     }
 
     &__list {
+        display: flex;
     }
 
     &__service {
-    }
-    &__text {
+        flex: 1 1 auto;
+        padding: 0 getVW(95);
+        padding-bottom: getVW(30);
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        justify-content: center;
+
+        img {
+            height: calc(15 / $VWDesctop * 100vw);
+            width: getVW(16);
+            margin-bottom: getVW(20);
+        }
+        p {
+            font-weight: 300;
+            font-size: getVW(17);
+            line-height: getVW(27);
+            letter-spacing: 0.02em;
+            color: $white;
+            // color: $black;
+
+            span {
+                font-weight: 800;
+            }
+        }
+
+        &:nth-child(1) {
+            padding-left: 0;
+            p {
+                width: getVW(210);
+            }
+        }
+        &:nth-child(2) > p {
+            width: getVW(225);
+        }
+        &:nth-child(3) > p {
+            width: getVW(145);
+        }
+        &:nth-child(4) > p {
+            width: getVW(450);
+        }
     }
 }
