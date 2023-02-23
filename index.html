@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Engine Lab</title>
+</head>
+
+<body>
+    <div class="wraper">
+        <header class="header">
+            <div class="header__top">
+                <div class="header__container">
+                    <div class="header__logo">
+                        <a href="/">
+                            <img src="./assets/logo.svg" alt="logo">
+                        </a>
+                        <p class="header__logo-text text">Ремонтируем двигатели<br>Hyundai и Kia с 2012 года </p>
+                    </div>
+                    <div class="header__address">
+                        <img src="./assets/map.svg" alt="map">
+                        <p class="header__address-text text">Адрес автоцентра: Москва,<br>Шоссейный проезд, с4 а/2</p>
+                    </div>
+                    <div class="header__map">
+                        <img src="./assets/point.svg" alt="point">
+                        <p class="header__text text">Смотреть на карте</p>
+                        <div class="header__location">
+                            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8edf5221e9d8befdc1080ee00e4d80cf6bedf88d7b28d7663b1c427bd2836868&amp;source=constructor"  frameborder="0"></iframe>
+                        </div>
+
+                    </div>
+                    <div class="header__price">
+                        <img src="./assets/calc.svg" alt="calc">
+                        <p class="header__text text"><span>Рассчитать стоимость</span><span>ремонта за 45 сек</spa>
+                        </p>
+                    </div>
+                    <div class="header__media">
+                        <div class="header__text text">Задайте вопрос,<br>мы сейчас онлайн</div>
+                        <div class="header__media-links">
+                            <a href="/" class="header__media-link">
+                                <img src="./assets/whatsup.svg" alt="whatsup">
+                            </a>
+                            <a href="/" class="header__media-link">
+                                <img src="./assets/telegram.svg" alt="telegram">
+                            </a>
+                            <a href="/" class="header__media-link">
+                                <img src="./assets/viber.svg" alt="viber">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header__contacts">
+                        <p class="header__text text">Звоните Пн-Сб 10:00 - 21:00</p>
+                        <a href="tel:+79251033330" class="header__call-number">+7 (925) 103 33 30</a>
+                        <span class="header__text">Заказать звонок</span>
+                    </div>
+                </div>
+            </div>
+            <div class="header__bottom">
+                <div class="header__container">
+                    <nav class="header__menu">
+                        <ul class="header__links">
+                            <li class="header__link"><a href="/">Главная</a></li>
+                            <li class="header__link"><a href="/">Услуги</a></li>
+                            <li class="header__link"><a href="/">Модели двигателей</a></li>
+                            <li class="header__link"><a href="/">Отзывы</a></li>
+                            <li class="header__link"><a href="/">Стоимость</a></li>
+                            <li class="header__link"><a href="/">Примеры работ</a></li>
+                            <li class="header__link"><a href="/">Полезные статьи</a></li>
+                            <li class="header__link"><a href="/">О Компании</a></li>
+                            <li class="header__link"><a href="/">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="main"></main>
+    </div>
+    <div class="popup hidden" id="popup__call">
+       <div class="popup__call call">
+            <div class="call__content">
+                <h3 class="call__title">Быстро оставить заявку</h3>
+                <div class="call__text">Введите номер — позвоним вам в течение 5-10 минут в рабочее время</div>
+                <p class="call__label">Введите ваш номер телефона</p>
+                <form action="" class="call__form">
+                    <input class="call__phone" type="text" id="phone" placeholder="+ 7 (_ _ _) _ _ _ - _ _ - _ _ ">
+                    <button class="call__button" type="submit">Перезвоните мне</button>
+                    <div class="call__rules">
+                        <label class="call__check-label" for="privacy"></label>
+                        <input class="call__checkbox" type="checkbox" id="privacy">
+                        <p class="call__privacy">Нажимая кнопку вы соглашаетесь с<br>условиями <a href="/">Политики конфиденциальности</a> </p>
+                    </div>
+                </form>
+                <div class="button-close"></div>
+            </div>
+       </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="js/phone.js"></script>
+</body>
+
+</html>

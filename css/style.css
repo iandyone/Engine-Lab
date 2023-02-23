@@ -1,0 +1,573 @@
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1;
+  font-family: "Manrope";
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+.header__contacts > span, .header__price > .text span, .header__map > .text {
+  position: relative;
+  transition: all 0.3s ease;
+}
+.header__contacts > span:hover::after, .header__price > .text span:hover::after, .header__map > .text:hover::after {
+  cursor: pointer;
+  width: 75%;
+  color: red;
+}
+.header__contacts > span::after, .header__price > .text span::after, .header__map > .text::after {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-bottom: 0.0536193029vw dotted #d91967;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: all 0.3s ease;
+}
+.header__contacts > span::after:hover, .header__price > .text span::after:hover, .header__map > .text::after:hover {
+  cursor: pointer;
+}
+
+.wraper {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 1.1796246649vw 0;
+}
+.header__top {
+  height: 4.3967828418vw;
+}
+.header__container {
+  width: 88.0428954424vw;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  margin-right: 3.0563002681vw;
+}
+.header__logo img {
+  width: 11.4209115282vw;
+  margin-right: 1.2332439678vw;
+}
+.header__logo > .text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.5898123324vw;
+  line-height: 1.072386059vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 8.6863270777vw;
+  width: 7.6139410188vw;
+  white-space: nowrap;
+}
+.header__address {
+  display: flex;
+  margin-right: 3.5388739946vw;
+}
+.header__address img {
+  width: 1.8766756032vw;
+  margin-right: 0.5361930295vw;
+}
+.header__address > .text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.5898123324vw;
+  line-height: 0.9651474531vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 8.418230563vw;
+  white-space: nowrap;
+}
+.header__map {
+  display: flex;
+  margin-right: 3.4852546917vw;
+  position: relative;
+}
+.header__map:hover {
+  cursor: pointer;
+  transition: opacity 0.3s ease-in;
+  pointer-events: auto;
+}
+.header__map:hover > div.header__location {
+  transition-delay: 0.4s;
+  opacity: 1;
+  pointer-events: auto;
+}
+.header__map img {
+  width: 0.6434316354vw;
+  margin-right: 0.5361930295vw;
+}
+.header__map > .text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.5898123324vw;
+  line-height: 0.8042895442vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 6.4343163539vw;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  height: 1.072386059vw;
+  display: flex;
+  align-items: flex-start;
+}
+.header__map > div.header__location {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  left: 0;
+  transform: translateX(-20%);
+  top: 1.072386059vw;
+  transition: opacity 0.2s ease-in;
+}
+.header__map > div.header__location:hover {
+  pointer-events: auto;
+}
+.header__map > div.header__location > iframe {
+  width: 13.4048257373vw;
+  height: 13.4048257373vw;
+}
+.header__price {
+  display: flex;
+  align-items: center;
+  margin-right: 3.5924932976vw;
+}
+.header__price img {
+  width: 1.8766756032vw;
+  margin-right: 0.5898123324vw;
+  height: 1.6085790885vw;
+}
+.header__price > .text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.5898123324vw;
+  line-height: 1.018766756vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 7.8820375335vw;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding-bottom: 0.4289544236vw;
+  align-items: flex-start;
+}
+.header__price > .text:hover {
+  cursor: pointer;
+}
+.header__media {
+  display: flex;
+  align-items: center;
+  margin-right: 3.0563002681vw;
+}
+.header__media img {
+  width: 1.8766756032vw;
+  height: 1.8766756032vw;
+}
+.header__media > .text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.5898123324vw;
+  line-height: 0.9651474531vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 5.6836461126vw;
+  width: 5.6836461126vw;
+  margin-right: 0.9651474531vw;
+  white-space: nowrap;
+}
+.header__media-links {
+  display: flex;
+}
+.header__media-link {
+  margin-right: 0.3217158177vw;
+  width: 1.8766756032vw;
+  height: 1.8766756032vw;
+}
+.header__contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.header__contacts > .text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.6434316354vw;
+  line-height: 0.5361930295vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 9.1152815013vw;
+  text-align: right;
+  position: relative;
+  margin-bottom: 0.3217158177vw;
+}
+.header__contacts > .text::before {
+  content: "";
+  position: absolute;
+  left: -0.4289544236vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #20C863;
+}
+.header__contacts > a {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.072386059vw;
+  line-height: 0.5361930295vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 10.0804289544vw;
+  height: 1.1796246649vw;
+  padding-right: 0.2680965147vw;
+  font-weight: 700;
+  text-align: right;
+  position: relative;
+}
+.header__contacts > a::before {
+  content: "";
+  position: absolute;
+  right: -0.5361930295vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.4825737265vw;
+  height: 0.2680965147vw;
+  background: url("../assets/arrow.svg") center no-repeat;
+}
+.header__contacts > span {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.6434316354vw;
+  line-height: 1.1260053619vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 6.1662198391vw;
+  align-self: center;
+}
+.header__contacts > span:hover {
+  cursor: pointer;
+}
+.header__contacts > span:hover::after {
+  cursor: pointer;
+  width: 75%;
+  color: red;
+}
+.header__contacts > span::before {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.3217158177vw;
+  height: 0.3217158177vw;
+  background: url("../assets/phone.svg") center no-repeat;
+}
+.header__bottom {
+  height: 3.4316353887vw;
+}
+.header__menu {
+  border-top: 1px solid rgba(42, 42, 42, 0.15);
+  padding: 1.1796246649vw 0;
+  width: 100%;
+}
+.header__links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 3.7533512064vw;
+}
+.header__link {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.6434316354vw;
+  line-height: 0.8579088472vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 16.0857908847vw;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  max-width: none;
+  text-transform: uppercase;
+  height: 1.072386059vw;
+  transition: 0.3s all ease;
+}
+.header__link:hover > a {
+  color: #cb2720;
+  transition: 0.3s all ease;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.popup__call {
+  position: relative;
+}
+
+.button-close {
+  position: absolute;
+  top: 1.8766756032vw;
+  right: 1.9839142091vw;
+  width: 1.072386059vw;
+  height: 1.072386059vw;
+  background: url("../assets/close.svg") center no-repeat;
+  transition: all 0.1s ease;
+}
+.button-close:hover {
+  cursor: pointer;
+}
+.button-close:active {
+  transform: scale(0.85);
+  transition: all 0.1s ease;
+}
+
+.call__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 32.1715817694vw;
+  background: url("../assets/form.jpg") 100%/100% no-repeat;
+  padding: 2.4128686327vw 3.6461126005vw 4.0214477212vw;
+  position: relative;
+}
+.call__title {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.7158176944vw;
+  line-height: 2.3592493298vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 15.2815013405vw;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 0.8579088472vw;
+  color: #ffffff;
+}
+.call__text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9651474531vw;
+  line-height: 1.5013404826vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 19.5710455764vw;
+  text-align: center;
+  margin-bottom: 1.8230563003vw;
+  color: #ffffff;
+}
+.call__label {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.7506702413vw;
+  line-height: 1.018766756vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 12.3324396783vw;
+  color: #ffffff;
+  margin-bottom: 0.6434316354vw;
+}
+.call__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.call__phone {
+  background: #fafafa;
+  box-shadow: inset 0 0 1.1260053619vw rgba(255, 255, 255, 0.4);
+  height: 4.5576407507vw;
+  display: flex;
+  align-items: center;
+  width: 19.4638069705vw;
+  border-radius: 73px;
+  padding: 1.5013404826vw 2.5201072386vw;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.9651474531vw;
+  line-height: 1.2868632708vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 26.8096514745vw;
+  color: #2a2a2a;
+  margin-bottom: 1.3404825737vw;
+}
+.call__button {
+  width: 19.4638069705vw;
+  border-radius: 73px;
+  padding: 1.5013404826vw 2.5201072386vw;
+  background-color: #FD2016;
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8579088472vw;
+  line-height: 1.2868632708vw;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  color: #2a2a2a;
+  max-width: 26.8096514745vw;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.3404825737vw;
+}
+.call__rules {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.7506702413vw;
+}
+.call__privacy {
+  font-weight: 400;
+  font-size: 0.7506702413vw;
+  line-height: 1.018766756vw;
+  align-items: center;
+  color: #ffffff;
+  width: 17.1581769437vw;
+}
+.call__privacy > a {
+  color: #FD2016;
+}
+.call__checkbox {
+  width: 1.072386059vw;
+  height: 1.072386059vw;
+  position: relative;
+}
+.call__checkbox:checked:before {
+  content: "";
+  position: absolute;
+  width: 1.072386059vw;
+  height: 1.072386059vw;
+  background-color: #cb2720;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/checked-white.svg") center no-repeat;
+  border-radius: 5px;
+}
+.call__checkbox:checked .call__checkbox__check-label {
+  display: none;
+}
+.call__checkbox:checked .call__check-label {
+  display: block;
+  background-color: green;
+}

@@ -1,0 +1,20 @@
+@import "./variables.scss";
+
+@function getVW($target) {
+    @return ($target / ($VWDesctop * 0.01) * 1) * 1vw;
+}
+
+
+@mixin text($fz: 11 , $lh, $width: none) {
+    font-family: $Manrope;
+    font-style: normal;
+    font-weight: 400;
+    font-size: getVW($fz);
+    line-height: getVW($lh);
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: $black;
+    max-width: getVW($width);
+}
+

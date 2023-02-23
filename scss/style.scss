@@ -1,0 +1,440 @@
+@import "./nullstyle.scss";
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./templates.scss";
+
+.wraper {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    // transition: all .3s ease;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: getVW(22) 0;
+
+    &__top {
+        height: calc(82 / $VWDesctop * 100vw);
+    }
+
+    &__container {
+        width: getVW(1642);
+        margin: 0px auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        margin-right: getVW(57);
+
+        img {
+            width: getVW(213);
+            margin-right: getVW(23);
+        }
+
+        & > .text {
+            @include text(11, 20, 162);
+            width: getVW(142);
+            white-space: nowrap;
+        }
+    }
+
+    &__address {
+        display: flex;
+        margin-right: getVW(66);
+
+        img {
+            width: getVW(35);
+            margin-right: getVW(10);
+        }
+
+        & > .text {
+            @include text(11, 18, 157);
+            white-space: nowrap;
+        }
+    }
+
+    &__map {
+        display: flex;
+        margin-right: getVW(65);
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+            transition: opacity 0.3s ease-in;
+            pointer-events: auto;
+
+            & > div.header__location {
+                transition-delay: 0.4s;
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+
+        img {
+            width: getVW(12);
+            margin-right: getVW(10);
+        }
+
+        & > .text {
+            @include text(11, 15, 120);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            height: calc(20 / $VWDesctop * 100vw);
+            display: flex;
+            align-items: flex-start;
+            @extend %border;
+        }
+
+        & > div.header__location {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            left: 0;
+            transform: translateX(-20%);
+            top: getVW(20);
+            transition: opacity 0.2s ease-in;
+
+            &:hover {
+                pointer-events: auto;
+            }
+
+            & > iframe {
+                width: getVW(250);
+                height: calc(250 / $VWDesctop * 100vw);
+            }
+        }
+    }
+
+    &__price {
+        display: flex;
+        align-items: center;
+        margin-right: getVW(67);
+
+        img {
+            width: getVW(35);
+            margin-right: getVW(11);
+            height: calc(30 / $VWDesctop * 100vw);
+        }
+
+        & > .text {
+            @include text(11, 19, 147);
+            display: flex;
+            flex-direction: column;
+            white-space: nowrap;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            padding-bottom: getVW(8);
+            align-items: flex-start;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            span {
+                @extend %border;
+            }
+        }
+    }
+
+    &__media {
+        display: flex;
+        align-items: center;
+        margin-right: getVW(57);
+
+        img {
+            width: getVW(35);
+            height: calc(35 / $VWDesctop * 100vw);
+        }
+
+        & > .text {
+            @include text(11, 18, 106);
+            width: getVW(106);
+            margin-right: getVW(18);
+            white-space: nowrap;
+        }
+    }
+
+    &__media-links {
+        display: flex;
+    }
+
+    &__media-link {
+        margin-right: getVW(6);
+        width: getVW(35);
+        height: calc(35 / $VWDesctop * 100vw);
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        & > .text {
+            @include text(12, 10, 170);
+            text-align: right;
+            position: relative;
+            margin-bottom: getVW(6);
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: getVW(-8);
+                top: 50%;
+                transform: translateY(-50%);
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: $green;
+            }
+        }
+
+        & > a {
+            @include text(20, 10, 188);
+            height: calc(22 / $VWDesctop * 100vw);
+            padding-right: getVW(5);
+            font-weight: 700;
+            text-align: right;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                right: getVW(-10);
+                top: 50%;
+                transform: translateY(-50%);
+                width: getVW(9);
+                height: calc(5 / $VWDesctop * 100vw);
+                background: url("../assets/arrow.svg") center no-repeat;
+            }
+        }
+
+        & > span {
+            @include text(12, 21, 115);
+            align-self: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:hover::after {
+                cursor: pointer;
+                width: 75%;
+                color: red;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                right: -15px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: getVW(6);
+                height: calc(6 / $VWDesctop * 100vw);
+                background: url("../assets/phone.svg") center no-repeat;
+            }
+
+            @extend %border;
+        }
+    }
+
+    &__bottom {
+        height: calc(64 / $VWDesctop * 100vw);
+    }
+
+    &__menu {
+        border-top: 1px solid rgb(42, 42, 42, 0.15);
+        padding: getVW(22) 0;
+        width: 100%;
+    }
+
+    &__links {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        column-gap: getVW(70);
+    }
+
+    &__link {
+        @include text(12, 16, 300);
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        max-width: none;
+        text-transform: uppercase;
+        height: calc(20 / $VWDesctop * 100vw);
+        transition: 0.3s all ease;
+
+        &:hover > a {
+            color: $red;
+            transition: 0.3s all ease;
+        }
+    }
+}
+
+.main {
+}
+
+.popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease;
+}
+
+.popup__call {
+
+    position: relative;
+
+}
+.button-close {
+    position: absolute;
+    top: getVW(35);
+    right: getVW(37);
+    width: getVW(20);
+    height: getVW(20);
+    background:url('../assets/close.svg') center no-repeat;
+    transition: all .1s ease;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(0.85);
+        transition: all .1s ease;
+    }
+}
+
+.call {
+    
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: calc(600 / $VWDesctop * 100vw);
+        background: url("../assets/form.jpg") 100% / 100% no-repeat;
+        padding: getVW(45) getVW(68) getVW(75);    
+        position: relative;  
+
+       
+    }
+
+    &__title {
+        @include text(32, 44, 285);
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: getVW(16);
+        color: $white;
+    }
+
+    &__text {
+        @include text(18, 28, 365);
+        text-align: center;
+        margin-bottom: getVW(34);
+        color: $white;
+    }
+
+    &__label {
+        @include text(14, 19, 230);
+        color: $white;
+        margin-bottom: getVW(12);
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__phone {
+        background: #fafafa;
+        box-shadow: inset 0 0 getVW(21) rgba(255, 255, 255, 0.4);
+        height: calc(85 / $VWDesctop * 100vw);
+        display: flex;
+        align-items: center;
+        width: getVW(363);
+        border-radius: 73px;
+        padding: getVW(28) getVW(47);
+        @include text(18, 24, 500);
+        color: $black;
+        margin-bottom: getVW(25);
+    }
+
+    &__button {
+        width: getVW(363);
+        border-radius: 73px;
+        padding: getVW(28) getVW(47);
+        background-color: $red2;
+        @include text(16, 24, 500);
+        letter-spacing: 0.04em;
+        color: $white;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: getVW(25);
+    }
+
+    &__rules {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: getVW(14);
+    }
+
+    &__privacy {
+        font-weight: 400;
+        font-size: getVW(14);
+        line-height: getVW(19);
+        align-items: center;
+        color: $white;
+        width: getVW(320);
+
+        & > a {
+            color: $red2;
+        }
+    }
+
+      &__checkbox {
+        width: getVW(20);
+        height: getVW(20);
+        position: relative;
+        
+        &:checked:before {
+            content: "";
+            position: absolute;
+            width: getVW(20);
+            height: getVW(20);
+            background-color: $red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("../assets/checked-white.svg") center no-repeat;
+            border-radius: 5px;
+        }
+
+        &:checked &__check-label {
+            display: none;
+        }
+    }
+
+    &__checkbox:checked &__check-label {
+        display: block;
+        background-color: green;
+    }
+}
