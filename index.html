@@ -28,7 +28,9 @@
                         <img src="./assets/point.svg" alt="point">
                         <p class="header__text text">Смотреть на карте</p>
                         <div class="header__location">
-                            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8edf5221e9d8befdc1080ee00e4d80cf6bedf88d7b28d7663b1c427bd2836868&amp;source=constructor"  frameborder="0"></iframe>
+                            <iframe
+                                src="https://yandex.ru/map-widget/v1/?um=constructor%3A8edf5221e9d8befdc1080ee00e4d80cf6bedf88d7b28d7663b1c427bd2836868&amp;source=constructor"
+                                frameborder="0"></iframe>
                         </div>
 
                     </div>
@@ -76,10 +78,56 @@
                 </div>
             </div>
         </header>
-        <main class="main"></main>
+        <main class="main">
+            <div class="main__scroll"></div>
+            <div class="main__content">
+                <section class="preview">
+                    <div class="preview__content">
+                        <h1 class="preview__title">Профессиональный <span>ремонт двигателей</span> HYUNDAI и KIA<br>с
+                            <span>гарантией 1 год</spa> за 4-7 дней
+                        </h1>
+                        <p class="preview__text">в специализированном автосервисе полного цикла</p>
+                        <div class="preview__buttons">
+                            <a href="/" class="preview__price-button">
+                                <p>Начать расчет стоимости<br>ремонта вашего двигателя</p>
+                                <img src="./assets/arrow-long.svg" alt="arrow">
+                            </a>
+                            <a href="/" class="preview__info-button">
+                                <img src="./assets/whatsup2.svg" alt="whatsup">
+                                <p>Узнайте стоимость по WhatsApp</p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <div class="services">
+                    <div class="services__content">
+                        <ul class="services__list">
+                            <li class="services__service">
+                                <img src="./assets/check.svg" alt="check">
+                                <p class="services__text"><span>Без предоплаты</span>.<br>Оплата после ремонта</p>
+                            </li>
+                            <li class="services__service">
+                                <img src="./assets/check.svg" alt="check">
+                                <p class="services__text"><span>Работаем официально</span> с<br>оформлением
+                                    заказ-<br>нарядов и чеков</p>
+                            </li>
+                            <li class="services__service">
+                                <img src="./assets/check.svg" alt="check">
+                                <p class="services__text"><span>Оригинальные запчасти</span></p>
+                            </li>
+                            <li class="services__service">
+                                <img src="./assets/check.svg" alt="check">
+                                <p class="services__text"><span>Лучшие цены на рынке</span> благодаря<br>прямым
+                                    поставкам запчастей и собственному цеху<br>механической обработки</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
     <div class="popup hidden" id="popup__call">
-       <div class="popup__call call">
+        <div class="popup__call call">
             <div class="call__content">
                 <h3 class="call__title">Быстро оставить заявку</h3>
                 <div class="call__text">Введите номер — позвоним вам в течение 5-10 минут в рабочее время</div>
@@ -90,12 +138,13 @@
                     <div class="call__rules">
                         <label class="call__check-label" for="privacy"></label>
                         <input class="call__checkbox" type="checkbox" id="privacy">
-                        <p class="call__privacy">Нажимая кнопку вы соглашаетесь с<br>условиями <a href="/">Политики конфиденциальности</a> </p>
+                        <p class="call__privacy">Нажимая кнопку вы соглашаетесь с<br>условиями <a href="/">Политики
+                                конфиденциальности</a> </p>
                     </div>
                 </form>
                 <div class="button-close"></div>
             </div>
-       </div>
+        </div>
     </div>
     <script src="js/script.js"></script>
     <script src="js/phone.js"></script>

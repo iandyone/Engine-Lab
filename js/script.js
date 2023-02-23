@@ -9,7 +9,7 @@ const popupCall = document.querySelector('#popup__call');
 
 async function submit(event) {
     const isPrivacyApplied = checkbox.checked;
-    
+
     event.preventDefault();
     [label, form, rules].forEach(item => item.classList.remove('hidden'));
 
@@ -48,6 +48,9 @@ document.querySelector('.call__form').addEventListener('submit', (event) => subm
 document.addEventListener('click', e => {
     // Открыть popup
     if (e.target.classList.contains('header__text')) {
+        text.textContent = 'Введите номер — позвоним вам в течение 5-10 минут в рабочее время';
+        label.textContent = 'Введите ваш номер телефона';
+        label.style.color = '$white';
         [label, form, rules].forEach(item => item.classList.remove('hidden'));
         popupCall.classList.remove('hidden');
     }
@@ -56,8 +59,5 @@ document.addEventListener('click', e => {
     if (e.target.classList.contains('button-close')) {
         const label = document.querySelector('.call__label');
         popupCall.classList.add('hidden');
-        text.textContent = 'Введите номер — позвоним вам в течение 5-10 минут в рабочее время';
-        label.textContent = 'Введите ваш номер телефона';
-        label.style.color = '$white';
     }
 })
