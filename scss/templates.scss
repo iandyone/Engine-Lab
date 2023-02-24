@@ -7,19 +7,18 @@
     &:hover::after {
         cursor: pointer;
         width: 75%;
-        color: red;
+        color: $red;
     }
 
     &::after {
         content: "";
-        width: 100%;
-        height: 0;
-        border-bottom: getVW(1) dotted $redLight;
-        -webkit-transition: 0.3s;
-        transition: 0.3s;
         position: absolute;
         left: 0;
         bottom: 0;
+        width: 100%;
+        height: 0;
+        border-bottom: getVW(1) dotted $redLight;
+        transition: 0.3s;
         transition: all 0.3s ease;
 
         &:hover {
@@ -54,7 +53,6 @@
         background: url('../assets/blick.svg') center no-repeat;
         transform: translateX(-10%);
         animation: blick 5s ease-in-out 0s infinite ;
-
     }
 }
 
@@ -63,8 +61,16 @@
     from {
         transform: translateX(-100%);
     }
-    
     to {
         transform: translateX(100%);
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translate(getVW(-65), getVW(654));
+    }
+    to {
+        transform: translate(getVW(-65), getVW(668));
     }
 }

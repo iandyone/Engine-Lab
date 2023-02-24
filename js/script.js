@@ -6,18 +6,19 @@ const form = document.querySelector('.call__form');
 const rules = document.querySelector('.call__rules');
 const input = document.querySelector('.call__phone');
 const popupCall = document.querySelector('#popup__call');
+const wraper = document.querySelector('.wraper');
 
 async function submit(event) {
     const isPrivacyApplied = checkbox.checked;
 
-    event.preventDefault();
     [label, form, rules].forEach(item => item.classList.remove('hidden'));
 
     if (isPrivacyApplied) {
         try {
-            if (input.value.length == 17) {
+            const isValidPhoneNumber = input.value.length == 17;
+            if (isValidPhoneNumber) {
                 const phone = input.value;
-                // const response = await await fetch('http://localhost:5000', {
+                // const response = await fetch('http://localhost:5000', {
                 //     method: 'POST',
                 //     body: { phone: phone }
                 // })
@@ -39,18 +40,30 @@ async function submit(event) {
         label.textContent = 'Необходимо принять условия Политики конфиденциальности';
         label.style.color = 'red';
     }
+
+    event.preventDefault();
 }
 
+// === Validate form  === //
 document.querySelector('.call__form').addEventListener('submit', (event) => submit(event));
 
-// window.addEventListener("scroll", function (e) {
-//     const scrollFromTop = document.querySelector(`html`).scrollTop;
-//     console.log(document.querySelector('.header__top'));
-//     document.querySelector('.header__top').style.background = scrollFromTop > 0 ? `rgba(0, 0, 0, 0.3` : `transparent`;
-// })
+// === Mobile/tablet header background  === //
+wraper.addEventListener("scroll", function () {
+    if(document.documentElement.clientWidth <= 992) {
+        const scrollFromTop = wraper.scrollTop;
+        document.querySelector('.header__top').style.background = scrollFromTop > 40 ? `rgba(0, 0, 0, 0.6` : `transparent`;
+    }
+})
+
+// === Desktop header background === //
+window.addEventListener('resize', () => {
+    if(document.documentElement.clientWidth > 992) {
+        document.querySelector('.header__top').style.background = 'white';
+    }
+})
 
 document.addEventListener('click', e => {
-    // Открыть popup
+    // === Open popup === //
     if (e.target.classList.contains('header__text')) {
         text.textContent = 'Введите номер — позвоним вам в течение 5-10 минут в рабочее время';
         label.textContent = 'Введите ваш номер телефона';
@@ -59,7 +72,7 @@ document.addEventListener('click', e => {
         popupCall.classList.remove('hidden');
     }
 
-    // Закрыть popup
+    // === Close popup === //
     if (e.target.classList.contains('button-close')) {
         const label = document.querySelector('.call__label');
         popupCall.classList.add('hidden');

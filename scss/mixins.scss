@@ -8,7 +8,6 @@
     @return ($value / 16) * 1rem;
 }
 
-
 @mixin text($fz: 11 , $lh, $width: none) {
     font-family: $Manrope;
     font-style: normal;

@@ -29,8 +29,6 @@ window.addEventListener("DOMContentLoaded", function() {
     input.addEventListener("input", mask, false);
     input.addEventListener("focus", mask, false);
     input.addEventListener("blur", mask, false);
-    input.addEventListener("keydown", mask, false)
-
+    input.addEventListener("keydown", mask, false);
   });
-
 });
