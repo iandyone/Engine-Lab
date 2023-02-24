@@ -493,13 +493,17 @@
             &::before {
                 content: "";
                 position: absolute;
-                left: getVW(-8);
-                top: 50%;
-                transform: translateY(-50%);
-                width: getVW(4);
-                height: getVW(4);
+                left: -7px;
+                top:3px;
+                transform: translateY(-51%);
+                width: rem(3);
+                height: rem(3);
                 border-radius: 50%;
                 background-color: $green;
+
+                @media (max-width: 992px) {
+                    top: 5px;
+                }
             }
 
             @media (max-width: 992px) {
@@ -519,15 +523,21 @@
             font-weight: 700;
             text-align: right;
             position: relative;
+            margin-bottom: getVW(3);
+            
+            @media (max-width: 992px) {
+                margin-bottom: rem(3);
+                
+            }
 
             &::before {
                 content: "";
                 position: absolute;
-                right: getVW(-10);
+                right: getVW(-14);
                 top: 50%;
                 transform: translateY(-50%);
-                width: getVW(9);
-                height: calc(5 / $VWDesctop * 100vw);
+                width: rem(9);
+                height: rem(9);
                 background: url("../assets/arrow.svg") center no-repeat;
 
                 @media (max-width: 992px) {
@@ -567,8 +577,8 @@
                 right: getVW(-15);
                 top: 50%;
                 transform: translateY(-50%);
-                width: getVW(6);
-                height: calc(6 / $VWDesctop * 100vw);
+                width: rem(6);
+                height: rem(6);
                 background: url("../assets/phone.svg") center no-repeat;
 
                 @media (max-width: 992px) {
@@ -610,7 +620,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            transform: translateY(-210%);
+            transform: translateY(-150%);
             transition: all 0.4s ease-in;
             height: 100%;
 
@@ -784,6 +794,7 @@
         }
 
         & > span {
+            align-self: flex-start;
             display: inline-block;
             font-weight: 800;
             font-size: 14px;

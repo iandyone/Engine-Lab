@@ -7,6 +7,7 @@ const rules = document.querySelector('.call__rules');
 const input = document.querySelector('.call__phone');
 const popupCall = document.querySelector('#popup__call');
 const wraper = document.querySelector('.wraper');
+const contacts = document.querySelectorAll('[data-type = contacts]');
 
 async function submit(event) {
     const isPrivacyApplied = checkbox.checked;
@@ -23,7 +24,7 @@ async function submit(event) {
                 //     body: { phone: phone }
                 // })
                 title.textContent = 'Заявка принята';
-                text.textContent = 'Оператор свяжется с вами в течении 5-10 минут';
+                text.textContent = 'Оператор свяжется с вами в течение 5-10 минут';
                 label.textContent = 'Введите ваш номер телефона';
                 label.style.color = '$white';
                 [label, form, rules].forEach(item => item.classList.add('hidden'));
@@ -58,7 +59,22 @@ wraper.addEventListener("scroll", function () {
 // === Desktop header background === //
 window.addEventListener('resize', () => {
     if(document.documentElement.clientWidth > 992) {
-        document.querySelector('.header__top').style.background = 'white';
+        contacts.forEach(item => item.style.color = '#2a2a2a');
+        document.querySelector('.header__top').style.background = 'transparent';
+    } else {
+        contacts.forEach(item => item.style.color = '#ffffff');
+        const headerTop =  document.querySelector('.header__top');
+        const scrollFromTop = wraper.scrollTop;
+        const isSidebarActive = document.querySelector('.header__bottom').classList.contains('active');
+
+        if(isSidebarActive) {
+            headerTop.style.background = 'white';
+            contacts.forEach(item => item.style.color = '#2a2a2a');
+        } else if (scrollFromTop > 40) {
+            headerTop.style.background = 'rgba(0, 0, 0, 0.6';
+        } else {
+            headerTop.style.background = 'transparent';
+        }
     }
 })
 

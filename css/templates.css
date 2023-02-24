@@ -1,0 +1,16 @@
+@keyframes blick {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes scroll {
+  from {
+    transform: translate(getVW(-65), getVW(654));
+  }
+  to {
+    transform: translate(getVW(-65), getVW(668));
+  }
+}
