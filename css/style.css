@@ -192,6 +192,14 @@ h1, h2, h3, h4, h5, h6 {
   background: url("../assets/close.svg") center no-repeat;
   transition: all 0.1s ease;
 }
+@media (max-width: 992px) {
+  .button-close {
+    top: 1.875rem;
+    right: 0.9375rem;
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+}
 .button-close:hover {
   cursor: pointer;
 }
@@ -209,6 +217,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2.4128686327vw 3.6461126005vw 4.0214477212vw;
   position: relative;
 }
+@media (max-width: 992px) {
+  .call__content {
+    height: 25rem;
+    width: 18.75rem;
+    padding: 3.75rem 1.5625rem 2.5rem;
+  }
+}
 .call__title {
   font-family: "Manrope";
   font-style: normal;
@@ -225,6 +240,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.8579088472vw;
   color: #ffffff;
 }
+@media (max-width: 992px) {
+  .call__title {
+    margin-bottom: 1rem;
+    font-size: 1.625rem;
+    line-height: 1.3rem;
+    max-width: none;
+  }
+}
 .call__text {
   font-family: "Manrope";
   font-style: normal;
@@ -240,6 +263,15 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.8230563003vw;
   color: #ffffff;
 }
+@media (max-width: 992px) {
+  .call__text {
+    font-size: 0.625rem;
+    margin-bottom: 2.125rem;
+    max-width: none;
+    margin-bottom: 3.125rem;
+    line-height: 0.9375rem;
+  }
+}
 .call__label {
   font-family: "Manrope";
   font-style: normal;
@@ -254,21 +286,27 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   margin-bottom: 0.6434316354vw;
 }
+@media (max-width: 992px) {
+  .call__label {
+    font-size: 0.5rem;
+    max-width: none;
+    margin-bottom: 0.75rem;
+  }
+}
 .call__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 992px) {
+  .call__form {
+    justify-content: flex-start;
+    width: 12.5rem;
+    height: 9.375rem;
+  }
+}
 .call__phone {
-  background: #fafafa;
-  box-shadow: inset 0 0 1.1260053619vw rgba(255, 255, 255, 0.4);
-  height: 4.5576407507vw;
-  display: flex;
-  align-items: center;
-  width: 19.4638069705vw;
-  border-radius: 3.9142091153vw;
-  padding: 1.5013404826vw 2.5201072386vw;
   font-family: "Manrope";
   font-style: normal;
   font-weight: 400;
@@ -279,8 +317,26 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.02em;
   color: #2a2a2a;
   max-width: 26.8096514745vw;
+  background: #fafafa;
+  box-shadow: inset 0 0 1.1260053619vw rgba(255, 255, 255, 0.4);
+  height: 4.5576407507vw;
+  display: flex;
+  align-items: center;
+  width: 19.4638069705vw;
+  border-radius: 3.9142091153vw;
+  padding: 1.5013404826vw 2.5201072386vw;
   color: #2a2a2a;
   margin-bottom: 1.3404825737vw;
+}
+@media (max-width: 992px) {
+  .call__phone {
+    font-size: 0.625rem;
+    width: 12.5rem;
+    height: 2.1875rem;
+    max-width: none;
+    margin-bottom: 0.625rem;
+    border-radius: 3.125rem;
+  }
 }
 .call__button {
   width: 19.4638069705vw;
@@ -305,11 +361,26 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   margin-bottom: 1.3404825737vw;
 }
+@media (max-width: 992px) {
+  .call__button {
+    font-size: 0.625rem;
+    width: 12.5rem;
+    height: 2.1875rem;
+    max-width: none;
+    border-radius: 3.125rem;
+    margin-bottom: 3.125rem;
+  }
+}
 .call__rules {
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 0.7506702413vw;
+}
+@media (max-width: 992px) {
+  .call__rules {
+    column-gap: 0.875rem;
+  }
 }
 .call__privacy {
   font-weight: 400;
@@ -322,10 +393,24 @@ h1, h2, h3, h4, h5, h6 {
 .call__privacy > a {
   color: #FD2016;
 }
+@media (max-width: 992px) {
+  .call__privacy {
+    font-size: 0.4375rem;
+    line-height: 0.7rem;
+    max-width: none;
+    width: auto;
+  }
+}
 .call__checkbox {
   width: 1.072386059vw;
   height: 1.072386059vw;
   position: relative;
+}
+@media (max-width: 992px) {
+  .call__checkbox {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
 }
 .call__checkbox:checked:before {
   content: "";
@@ -336,8 +421,14 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../assets/checked-white.svg") center no-repeat;
+  background: url("../assets/checked-white.svg") center no-repeat, #FD2016;
   border-radius: 0.2680965147vw;
+}
+@media (max-width: 992px) {
+  .call__checkbox:checked:before {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
 }
 .call__checkbox:checked .call__checkbox__check-label {
   display: none;
