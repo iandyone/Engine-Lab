@@ -4,6 +4,10 @@
     @return ($target / ($VWDesctop * 0.01) * 1) * 1vw;
 }
 
+@function rem($value) {
+    @return ($value / 16) * 1rem;
+}
+
 
 @mixin text($fz: 11 , $lh, $width: none) {
     font-family: $Manrope;

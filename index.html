@@ -54,9 +54,12 @@
                         </div>
                     </div>
                     <div class="header__contacts">
-                        <p class="header__text text">Звоните Пн-Сб 10:00 - 21:00</p>
-                        <a href="tel:+79251033330" class="header__call-number">+7 (925) 103 33 30</a>
-                        <span class="header__text">Заказать звонок</span>
+                        <p class="header__text text" data-type="contacts">Звоните Пн-Сб 10:00 - 21:00</p>
+                        <a href="tel:+79251033330" class="header__call-number" data-type="contacts">+7 (925) 103 33 30</a>
+                        <span class="header__text" data-type="contacts">Заказать звонок</span>
+                    </div>
+                    <div class="header__burger burger">
+                        <span class="burger__item"></span>
                     </div>
                 </div>
             </div>
@@ -65,7 +68,13 @@
                     <nav class="header__menu">
                         <ul class="header__links">
                             <li class="header__link"><a href="/">Главная</a></li>
-                            <li class="header__link"><a href="/">Услуги</a></li>
+                            <li class="header__link menu-link">
+                                <a href="/">Услуги</a>
+                                <div class="header__sublinks">
+                                    <a href="/" class="header__sublink">Ремонт двигателей KIA</a>
+                                    <a href="/" class="header__sublink">Ремонт двигателей HYndai</a>
+                                </div>
+                            </li>
                             <li class="header__link"><a href="/">Модели двигателей</a></li>
                             <li class="header__link"><a href="/">Отзывы</a></li>
                             <li class="header__link"><a href="/">Стоимость</a></li>
@@ -73,6 +82,44 @@
                             <li class="header__link"><a href="/">Полезные статьи</a></li>
                             <li class="header__link"><a href="/">О Компании</a></li>
                             <li class="header__link"><a href="/">Контакты</a></li>
+                        </ul>
+                        <ul class="header__options options">
+                            <li class="options__services">
+                                <div class="options__address">
+                                    <img src="./assets/map.svg" alt="map">
+                                    <div class="options__text">
+                                        <p>Адрес автоцентра:</p>
+                                        <span>Шоссейный проезд, с4 а/2</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="options__services">
+                                <div class="options__price">
+                                    <img src="./assets/calc.svg" alt="calc">
+                                    <div class="options__text">
+                                        <p>Рассчитать стоимость</p>
+                                        <span>ремонта за 45 сек</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="options__services">
+                                <div class="options__contact">
+                                    <img src="./assets/avatar.svg" alt="calc">
+                                    <div class="options__text">
+                                        <p>Ecть вопрос?</p>
+                                        <span>Задайте его нашему</span>
+                                        <span>мастеру онлайн</span>
+                                        <div class="options__media">
+                                            <a href="/">
+                                                <img src="./assets/whatsup.svg" alt="whatsup">
+                                            </a>
+                                            <a href="/">
+                                                <img src="./assets/telegram.svg" alt="telegram">
+                                            </a>
+                                    </div>
+                                    </div>
+                                   
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -151,6 +198,7 @@
     </div>
     <script src="js/script.js"></script>
     <script src="js/phone.js"></script>
+    <script src="js/burger.js"></script>
 </body>
 
 </html>
