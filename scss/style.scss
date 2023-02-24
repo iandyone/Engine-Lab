@@ -1143,7 +1143,7 @@
 
         @media (max-width: 600px) {
             padding: 0;
-            padding-left: rem(15);
+            padding-left: rem(22);
         }
 
         img {
@@ -1203,8 +1203,8 @@
                 padding: 0 rem(50);
             }
             @media (max-width: 600px) {
-                padding: 0 rem(15);
-                order: 2;
+                padding: 0 rem(22);
+                order: 1;
             }
         }
         &:nth-child(2) {
@@ -1212,7 +1212,7 @@
                 order: 3;
             }
             @media (max-width: 600px) {
-                padding: 0 rem(15);
+                padding: 0 rem(22);
             }
             p {
                 width: getVW(225);
@@ -1224,7 +1224,8 @@
         }
         &:nth-child(3) {
             @media (max-width: 600px) {
-                order: 1;
+                order: 2;
+                padding: 0 rem(22);
             }
             p {
                 width: getVW(145);

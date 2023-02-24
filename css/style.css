@@ -1377,7 +1377,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 600px) {
   .services__service {
     padding: 0;
-    padding-left: 0.9375rem;
+    padding-left: 1.375rem;
   }
 }
 .services__service img {
@@ -1448,8 +1448,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 600px) {
   .services__service:nth-child(1) {
-    padding: 0 0.9375rem;
-    order: 2;
+    padding: 0 1.375rem;
+    order: 1;
   }
 }
 @media (max-width: 600px) {
@@ -1459,7 +1459,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 600px) {
   .services__service:nth-child(2) {
-    padding: 0 0.9375rem;
+    padding: 0 1.375rem;
   }
 }
 .services__service:nth-child(2) p {
@@ -1472,7 +1472,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (max-width: 600px) {
   .services__service:nth-child(3) {
-    order: 1;
+    order: 2;
+    padding: 0 1.375rem;
   }
 }
 .services__service:nth-child(3) p {
