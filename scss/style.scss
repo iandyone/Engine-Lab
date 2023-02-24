@@ -6,7 +6,7 @@
 
 .wraper {
     min-height: 100vh;
-    overflow: hidden;
+    // overflow: hidden;
 
     @media (max-width: 992px) {
         overflow: auto;
@@ -194,7 +194,7 @@
 
         @media (max-width: 992px) {
             font-size: rem(7);
-            line-height: .7rem;
+            line-height: 0.7rem;
             max-width: none;
             width: auto;
         }
@@ -250,6 +250,7 @@
     }
 
     &__top {
+
         height: calc(82 / $VWDesctop * 100vw);
 
         @media (max-width: 992px) {
@@ -260,6 +261,9 @@
             height: rem(60);
             padding: rem(10);
             transition: all 0.8s ease;
+            z-index: 150;
+            // background-color: rgba(0, 0, 0, 0.3);
+            // background-color: white;
         }
     }
 
@@ -268,12 +272,13 @@
         margin: 0 auto;
         display: flex;
         align-items: center;
-
+        margin-left: getVW(135);
         // margin-right: getVW(138);
 
         @media (max-width: 992px) {
             justify-content: space-between;
             width: 95vw;
+            margin-left: 0;
             // margin-right: 0;
         }
     }
@@ -341,6 +346,7 @@
                 transition-delay: 0.4s;
                 opacity: 1;
                 pointer-events: auto;
+                z-index: 100;
             }
         }
 
@@ -870,13 +876,49 @@
     display: flex;
 
     .scroll {
-        width: getVW(78);
+        width: getVW(135);
         height: calc(915 / $VWDesctop * 100vw);
         position: relative;
 
         @media (max-width: 992px) {
             display: none;
         }
+
+        &__text {
+            font-weight: 700;
+            font-size: getVW(16);
+            line-height: getVW(25);
+            color: $scrollWhite;
+            transform: rotate(-90deg) translateX(getVW(-10));
+            position: relative;
+        }
+
+        &__bar {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: getVW(20);
+                height: calc(32 / $VWDesctop * 100vw);
+                background: url("../assets/mouse.svg") 100% / 100% no-repeat;
+                transform: translate(getVW(60), getVW(620));
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: calc(1 / $VWDesctop * 100vw);
+                width: getVW(490);
+                background-color: $scrollWhite;
+                transform: rotate(-90deg) translate(getVW(-350), getVW(-175));
+            }
+        }
+    }
+
+    &__content {
+        width: getVW(1780);
+        position: relative;
 
         &::before {
             content: "";
@@ -886,54 +928,9 @@
             width: 5px;
             height: 5px;
             background: url("../assets/circle.svg") center no-repeat;
-            transform: translate(getVW(50), getVW(670));
+            transform: translate(getVW(-63), getVW(654));
             animation: scroll 2s ease-in-out 0s infinite;
         }
-
-        &__text {
-            font-weight: 700;
-            font-size: getVW(16);
-            line-height: getVW(25);
-            color: $scrollWhite;
-            transform: rotate(-90deg) translateX(getVW(-35));
-            position: relative;
-
-            // &::before {
-            //     content: "";
-            //     position: absolute;
-            //     height: calc(1 / $VWDesctop * 100vw);
-            //     width: getVW(490);
-            //     background-color: $scrollWhite;
-            //     transform: translate(-110%, getVW(15));
-            // }
-
-            &::after {
-                content: "";
-                position: absolute;
-                width: getVW(20);
-                height: calc(32 / $VWDesctop * 100vw);
-                background: url("../assets/mouse.svg") center no-repeat;
-                transform: rotate(90deg) translate(0, getVW(680));
-            }
-        }
-
-        &__bar {
-            position: relative;
-
-            &::before {
-                content: "";
-                position: absolute;
-                height: calc(1 / $VWDesctop * 100vw);
-                width: getVW(490);
-                background-color: $scrollWhite;
-                // transform: translate(-110%, getVW(15));
-                transform: rotate(-90deg) translate(getVW(-350), getVW(-195));
-            }
-        }
-    }
-
-    &__content {
-        width: getVW(1780);
 
         @media (max-width: 992px) {
             width: 100%;
@@ -973,7 +970,7 @@
         font-style: normal;
         font-weight: 400;
         font-size: getVW(65);
-        line-height: getVW(95);
+        line-height: getVW(89);
         letter-spacing: 0.02em;
         color: $white;
         width: getVW(1100);
@@ -1053,7 +1050,7 @@
         color: $white;
         justify-content: space-between;
         padding: getVW(25) getVW(54);
-        margin-right: getVW(22);
+        margin-right: getVW(15);
         transition: all 0.2s ease;
         @extend %button;
 
@@ -1176,7 +1173,7 @@
 
 // === SERVICES == //
 .services {
-    margin-top: getVW(-158);
+    margin-top: getVW(-187);
 
     @media (max-width: 992px) {
         margin-top: 0;
@@ -1207,7 +1204,7 @@
 
     &__service {
         flex: 1 1 auto;
-        padding: 0 getVW(95);
+        padding: 0 getVW(65);
         padding-bottom: getVW(30);
         display: flex;
         flex-direction: column;
@@ -1287,10 +1284,10 @@
             }
         }
         &:nth-child(2) {
+            padding-left: getVW(100);
+
             @media (max-width: 600px) {
                 order: 3;
-            }
-            @media (max-width: 600px) {
                 padding: 0 rem(22);
             }
             p {
@@ -1298,10 +1295,10 @@
                 @media (max-width: 992px) {
                     width: auto;
                 }
-               
             }
         }
         &:nth-child(3) {
+            padding-left: getVW(115);
             @media (max-width: 600px) {
                 order: 2;
                 padding: 0 rem(22);
@@ -1314,7 +1311,9 @@
             }
         }
         &:nth-child(4) {
+            padding-left: getVW(110);
             @media (max-width: 600px) {
+                padding: 0 rem(22);
                 order: 2;
             }
             p {
@@ -1333,9 +1332,9 @@
 
 @keyframes scroll {
     from {
-        transform: translate(getVW(50), getVW(670));
+        transform: translate(getVW(-61), getVW(654));
     }
     to {
-        transform: translate(getVW(50), getVW(683));
+        transform: translate(getVW(-61), getVW(668));
     }
 }

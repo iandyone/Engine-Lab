@@ -41,9 +41,13 @@ async function submit(event) {
     }
 }
 
-
-document.querySelector('.header__text').addEventListener('click', (event) => alert(123))
 document.querySelector('.call__form').addEventListener('submit', (event) => submit(event));
+
+// window.addEventListener("scroll", function (e) {
+//     const scrollFromTop = document.querySelector(`html`).scrollTop;
+//     console.log(document.querySelector('.header__top'));
+//     document.querySelector('.header__top').style.background = scrollFromTop > 0 ? `rgba(0, 0, 0, 0.3` : `transparent`;
+// })
 
 document.addEventListener('click', e => {
     // Открыть popup
